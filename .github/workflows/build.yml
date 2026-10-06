@@ -1,0 +1,30 @@
+name: Build Latite DLL
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: microsoft/setup-msbuild@v2
+
+      - name: Build (Release x64)
+        run: msbuild LatiteRewrite.vcxproj /m /p:Configuration=Release /p:Platform=x64
+
+      - name: Collect DLLs
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          Get-ChildItem -Recurse -Filter *.dll |
+            Where-Object { $_.FullName -notmatch '\\dist\\' -and $_.Name -like 'Latite*' } |
+            ForEach-Object { Copy-Item $_.FullName dist\ }
+          Get-ChildItem dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Latite-dll
+          path: dist/*.dll
