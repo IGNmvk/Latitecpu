@@ -1,3 +1,4 @@
+#pragma comment(lib, "windowsapp.lib")
 #include "pch.h"
 #include "Screenshot.h"
 #include "client/event/impl/KeyUpdateEvent.h"
