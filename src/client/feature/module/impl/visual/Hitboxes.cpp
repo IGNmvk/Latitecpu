@@ -34,7 +34,7 @@ void Hitboxes::onEntityRender(Event& evG) {
 	auto lp = SDK::ClientInstance::get()->getLocalPlayer();
 	auto entt = ev.getEntity();
 
-	if (entt->isInvisible()) return;
+	// isInvisible() check removed: its vtable offset may be wrong on 1.21.11X and hides every mob/player
 	if (entt == lp) return;
 	if (!std::get<BoolValue>(items) && entt->getEntityTypeID() == 64) return;
 
