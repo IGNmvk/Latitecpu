@@ -38,6 +38,7 @@
 #include "impl/hud/Keystrokes.h"
 #include "impl/hud/BreakIndicator.h"
 #include "impl/hud/HealthWarning.h"
+#include "impl/hud/BetterHunger.h"
 #include "impl/hud/ArmorHUD.h"
 #include "impl/hud/MovablePaperdoll.h"
 #include "impl/hud/MovableScoreboard.h"
@@ -73,6 +74,7 @@ ModuleManager::ModuleManager() {
 	this->items.push_back(std::make_shared<Keystrokes>());
 	this->items.push_back(std::make_shared<CinematicCamera>());
 	this->items.push_back(std::make_shared<HealthWarning>());
+	this->items.push_back(std::make_shared<BetterHunger>());
 	this->items.push_back(std::make_shared<BreakIndicator>());
 	this->items.push_back(std::make_shared<BehindYou>());
 	this->items.push_back(std::make_shared<ChunkBorders>());
