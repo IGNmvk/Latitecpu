@@ -675,6 +675,7 @@
     <ClCompile Include="src\client\feature\module\impl\game\BehindYou.cpp" />
     <ClCompile Include="src\client\feature\module\impl\hud\ArmorHUD.cpp" />
     <ClCompile Include="src\client\feature\module\impl\hud\HealthWarning.cpp" />
+    <ClCompile Include="src\client\feature\module\impl\hud\BetterHunger.cpp" />
     <ClCompile Include="src\client\feature\command\impl\SignCommand.cpp" />
     <ClCompile Include="src\client\feature\module\impl\hud\BreakIndicator.cpp" />
     <ClCompile Include="src\client\feature\module\impl\hud\Keystrokes.cpp" />
